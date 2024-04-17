@@ -36,3 +36,280 @@ ul,
 ol {
   list-style: none;
 }
+
+.content {  /* весь контент страницы */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-content: center;
+  gap: 30px;
+  margin: 0 auto;
+  padding: 133px 30px;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.result { /* секция с выбранным видео */
+  align-self: end;
+  min-height: 456px;
+}
+
+.result__video-container { /* контейнер с выбранным видео */
+  position: relative;
+  z-index: 1;
+  width: 711px;
+  height: 386px;
+  margin-bottom: 16px;
+}
+
+.result__video {  
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0%;
+} 
+
+.search-form { /* форма поиска видео */
+  display: flex;
+  justify-content: space-between;
+  align-items: start; 
+}
+
+.search-form__fieldset { /* форма ввода */
+  border: none;
+}
+
+.search-form__fieldset-title { /* заголовок формы ввода */
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.search-form__textfield {
+  min-width: 225px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 21.6px;
+  background-color: inherit;
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-block-start: 1px solid #fff;
+  border-block-end: 1px solid #fff;
+  appearance: none; /* сбрасывает системные стили */
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  min-width: 212px;
+  appearance: none; 
+}
+
+.search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 19px;
+  height: 19px;
+  background-color: inherit;
+  border: 1px solid #fff;
+  vertical-align: middle;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: white;
+} 
+
+/* input[type="checkbox"]:checked + span { 
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  outline: 1px solid white;
+  outline-offset: 1px;
+  border: none;
+} */
+
+.search-form__label { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+/*
+.search-form__label:focus {
+  outline: none;
+} */
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid white;
+  outline-offset: 1px;
+  border: none;
+}
+
+.search-form__label-text { 
+
+}
+
+button {
+  background-color: inherit;
+  border: 1px solid #fff;
+  align-self: flex-end;
+  cursor: pointer;
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.6px;
+  text-align: center;
+  color:#fff;
+  cursor: pointer;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  height: 34px;
+}
+
+.content__details { /**/
+  width: 100%;
+  height: 100%;
+}
+
+.title { /* заголовок контейнера с карточками */
+  margin-bottom: 26px;
+  font-family: Oswald;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 70.5px;
+  text-transform: uppercase;
+  color: #fff;
+  ;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list { /* блок с темплейтами карточек */
+  position: relative;
+  z-index: 1;
+  max-height: 298px;
+  overflow: scroll;
+}
+
+/* ТЕМПЛЕЙТЫ 
+прелоадер */
+
+.preloader-template {
+  position: absolute;
+  z-index: 2;
+
+}
+
+.preloader {
+
+}
+
+.preloader-chasing-squares {
+
+}
+
+.square {
+
+}
+
+/* карточки */
+
+.cards-list-item-template {
+
+}
+
+.content__list-item {
+  
+}
+
+.content__list-item:not(:last-of-type) { /* список капточек */
+  margin-bottom: 32px;
+  
+}
+
+.content__card-link {
+  text-decoration: none;
+}
+
+.content__video-card {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  justify-content: center;
+  align-items: start;
+  margin: 0 auto;
+}
+
+.content__video-card-description-container {
+
+}
+
+.content__video-card-title {
+  font-family: Oswald;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.content__video-card-description {
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 16.2px;
+  color:#fff;
+}
+
+.content__video-card-thumbnail {
+  width: 193px;
+  height: 103px;
+}
+
+/* кнопка показать еще */
+
+.more-button-template {
+
+}
+
+.more-button {
+  width: 100%;
+  height: 34px;
+}
+
+/* ошибка */
+
+.error-template {
+
+}
+
+.error {
+
+}
+
+.error-title {
+
+}
