@@ -61,24 +61,22 @@ ol {
 .result {
   /* секция с выбранным видео */
   align-self: end;
-  min-height: 456px;
-  margin-bottom: 4px;
+  min-block-size: 456px;
+  margin-block-end: 4px;
 }
 
 .result__video-container {
   /* контейнер с выбранным видео */
   position: relative;
   z-index: 1;
-  width: 711px;
-  height: 386px;
-  margin-bottom: 16px;
+  inline-size: 711px;
+  block-size: 386px;
+  margin-block-end: 16px;
 }
 
 .result__video {
-  /* position: absolute;
-  inset: 0; */
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   object-position: 0%;
 }
@@ -100,13 +98,13 @@ ol {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 400;
-  line-height: 21.6px;
+  line-height: 20px;
   color: #fff;
-  margin-bottom: 5px;
+  margin-block-end: 5px;
 }
 
 .search-form__textfield {
-  min-width: 225px;
+  min-inline-size: 225px;
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
@@ -125,7 +123,7 @@ ol {
   justify-content: space-between;
   align-items: center;
   gap: 5px;
-  min-width: 212px;
+  min-inline-size: 212px;
   appearance: none;
 }
 
@@ -133,24 +131,23 @@ ol {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 19px;
-  height: 19px;
+  inline-size: 19px;
+  block-size: 19px;
   background-color: inherit;
   border: 1px solid #fff;
-  vertical-align: middle;
 }
 
 .search-form__checkbox:active + .search-form__pseudo-checkbox::after {
   content: '';
-  width: 15px;
-  height: 15px;
+  inline-size: 15px;
+  block-size: 15px;
   background-color: white;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: '';
-  width: 15px;
-  height: 15px;
+  inline-size: 15px;
+  block-size: 15px;
   background-color: white;
 }
 
@@ -162,7 +159,7 @@ ol {
 }
 
 .search-form__label-text {
-  padding-left: 5px;
+  padding-inline-start: 5px;
 }
 
 .search-form__label:hover > .search-form__label-text {
@@ -207,20 +204,19 @@ button {
 }
 
 .search-form__submit-button {
-  width: 194px;
-  height: 34px;
+  inline-size: 194px;
+  block-size: 34px;
 }
 
 .content__details {
-  width: 100%;
-  min-height: 540px;
-  align-self: first baseline;
+  inline-size: 100%;
+  min-block-size: 540px;
 }
 
 .title {
   /* заголовок контейнера с карточками */
-  margin-bottom: 20px;
-  padding-top: 4px;
+  margin-block-end: 20px;
+  padding-block-start: 4px;
   font-family: Oswald;
   font-size: 75px;
   font-weight: 700;
@@ -237,30 +233,27 @@ button {
   /* блок с темплейтами карточек */
   position: relative;
   z-index: 1;
-  max-height: 298px;
+  max-block-size: 298px;
   overflow: scroll;
-  padding-left: 2px;
-  padding-right: 2px;
-  padding-bottom: 2px;
+  padding-inline-start: 2px;
+  padding-inline-end: 2px;
+  padding-block-end: 2px;
 }
 
 /* темплейт карточки */
 
-.cards-list-item-template {
-}
-
-.content__list-item {
-
+.content-list-item {
+  min-block-size: 107px;
+  appearance: none;
 }
 
 .content__list-item:not(:last-of-type) {
   /* список каpточек */
-  margin-bottom: 32px;
+  margin-block-end: 32px;
 }
 
 .content__card-link {
   text-decoration: none;
-  appearance: none;
 }
 
 .content__card-link:hover {
@@ -268,14 +261,19 @@ button {
   color: #fff;
 }
 
-.content__card-link:active + .content__list-item {
+.content__list-item:active {
   background-color: #545050;
+  text-decoration: none;
 }
 
-.content__card-link:has(:focus-visible) {
+.content__list-item:focus {
   border: none;
   outline: 1px solid white;
-  outline-offset: 1px;
+}
+
+.content__list-item:focus-visible {
+  border: none;
+  outline: 1px solid white;
 }
 
 .content__video-card {
@@ -293,7 +291,6 @@ button {
   font-family: Oswald, sans-serif;
   font-size: 30px;
   font-weight: 700;
-  line-height: 30px;
   line-height: normal;
   text-transform: uppercase;
   color: #fff;
@@ -308,8 +305,8 @@ button {
 }
 
 .content__video-card-thumbnail {
-  width: 193px;
-  height: 103px;
+  inline-size: 193px;
+  block-size: 103px;
   object-fit: cover;
   object-position: 0%;
 }
@@ -317,8 +314,8 @@ button {
 /* кнопка показать еще */
 
 .more-button {
-  width: 100%;
-  height: 34px;
+  inline-size: 100%;
+  block-size: 34px;
 }
 
 .more-button:focus-visible {
